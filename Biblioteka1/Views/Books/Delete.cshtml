@@ -1,0 +1,64 @@
+﻿@model Biblioteka1.Models.Book
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Czy na pewno usunąć?</h3>
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Author.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.publicationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.publicationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pages)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rating)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
